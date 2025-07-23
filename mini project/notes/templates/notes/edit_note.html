@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Note</title>
+</head>
+<body style="font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 20px; color: #333;">
+
+    <h1 style="text-align: center; color: #343a40;">✏️ Edit Note</h1>
+
+    <form method="post" style="max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Update" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer;">
+    </form>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'home' %}" style="color: #007bff; text-decoration: none;">← Back to Notes</a>
+    </div>
+
+</body>
+</html>
